@@ -1,0 +1,20 @@
+<!-- chat/templates/chat/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Chat Rooms</title>
+</head>
+<body>
+    What chat room would you like to enter?<br>
+    {% for room in object_list %}
+    <ul>
+        <li>
+            <a href="{% url 'chat:room' room.slug %}">{{room.name}}</a>
+        </li>
+    </ul>
+    {% endfor %}
+
+    <a href="{% url 'chat:create' %}">Create room</a>
+</body>
+</html>
